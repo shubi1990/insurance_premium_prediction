@@ -75,4 +75,13 @@ class ModelTrainerConfig:
         raise InsuranceException(e, sys)
 
 
+class ModelEvaluationConfig:
+    try:
+        def __init__(self, training_pipeline_config:TrainingPipelineConfig):
+            self.change_threshold = 0.01
+    except Exception as e:
+        raise InsuranceException(e, sys)
+
+
+
 
