@@ -10,7 +10,7 @@ import pickle
 #from sklearn.preprocessing import LabelEncoder
 
 model = pickle.load(open('model.pkl','rb'))
-encoder = pickle.load(open('target_encoder.pkl','rb'))
+encoder = pickle.load(open('target.pkl','rb'))
 transformer = pickle.load(open('transformer.pkl','rb'))
 
 st.title("Insurance Premium Prediction")
