@@ -1,7 +1,7 @@
-import os, sys
+import os
 from typing import Optional
 from insurance.entity.config_entity import TRANSFORMER_OBJECT_FILE_NAME, TARGET_OBJECT_FILE_NAME, MODEL_FILE_NAME
-
+from glob import glob
 
 class ModelResolver:
     def __init__(self, model_registry:str = "saved_models",
@@ -20,7 +20,7 @@ class ModelResolver:
         try:
             dir_names = os.listdir(self.model_registry)
             if len(dir_names)==0:
-                raise None
+                return None
             dir_names = list(map(int, dir_names))
             latest_dir_name = max(dir_names)
             return os.path.join(self.model_registry, f'{latest_dir_name}')
